@@ -5,14 +5,37 @@ var todoCountSpan = document.querySelector("#todo-count");
 
 var todos = ["Learn HTML", "Learn CSS", "Learn JavaScript"];
 
+//  Your goal is to create a function that will render our todos into a list in the browser.
+
 function renderToDos() {
+  // Initially set the text content of the todoList to an empty string.
   todoList.innerHTML = "";
+  //    todoCountSpan should show the total count of todos on the page.
   todoCountSpan.textContent = todos.length;
+  //    Inside of your render function you will also need a for loop.
+
+  //    It should loop over the `todos` array creating an `li` element for each index of the array.
   for (var i = 0; i < todos.length; i++) {
+    // It should set the content of the created `li` element to the value of the current array index.
     var li = document.createElement("li");
     li.innerText = todos[i];
+    // Finally the new `li` should be appended to the `ul` provided.
     todoList.appendChild(li);
   }
 }
+
+// Add an event listener so that when a user hits enter, the value from the todo input field is pushed to our todo array.
+todoForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  var todo = todoInput.value;
+  //   Make sure that empty values are not pushed to the array.
+  if (todo === "") {
+    return;
+  }
+  todos.push(todo);
+  // * Once the value has been added to the array, clear the input field and re-render the todo list.
+  todoInput.value = "";
+  renderToDos();
+});
 
 renderToDos();
