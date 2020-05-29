@@ -3,15 +3,21 @@ var todoForm = document.querySelector("#todo-form");
 var todoList = document.querySelector("#todo-list");
 var todoCountSpan = document.querySelector("#todo-count");
 
-var todos = ["Learn HTML", "Learn CSS", "Learn JavaScript"];
+var todos = JSON.parse(localStorage.getItem("todos")) || [];
 
 //  Your goal is to create a function that will render our todos into a list in the browser.
+
+function saveToStorage() {
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
 function removeTodo(event) {
   // it accesses the `data-index` value and removes that todo element from the list.
   var todoIndex = parseInt(
     event.target.parentElement.getAttribute("data-index")
   );
   todos.splice(todoIndex, 1);
+  saveToStorage();
   renderToDos();
 }
 
@@ -55,6 +61,8 @@ todoForm.addEventListener("submit", function (event) {
   }
   todos.push(todo);
   // * Once the value has been added to the array, clear the input field and re-render the todo list.
+  saveToStorage();
+
   todoInput.value = "";
   renderToDos();
 });
