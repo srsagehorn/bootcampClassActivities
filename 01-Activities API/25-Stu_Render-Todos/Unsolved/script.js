@@ -6,6 +6,14 @@ var todoCountSpan = document.querySelector("#todo-count");
 var todos = ["Learn HTML", "Learn CSS", "Learn JavaScript"];
 
 //  Your goal is to create a function that will render our todos into a list in the browser.
+function removeTodo(event) {
+  // it accesses the `data-index` value and removes that todo element from the list.
+  var todoIndex = parseInt(
+    event.target.parentElement.getAttribute("data-index")
+  );
+  todos.splice(todoIndex, 1);
+  renderToDos();
+}
 
 function renderToDos() {
   // Initially set the text content of the todoList to an empty string.
@@ -19,7 +27,20 @@ function renderToDos() {
     // It should set the content of the created `li` element to the value of the current array index.
     var li = document.createElement("li");
     li.innerText = todos[i];
+    // When a new todo is created, add a `data-index` for each `li`.
+    li.setAttribute("data-index", i);
     // Finally the new `li` should be appended to the `ul` provided.
+    var button = document.createElement("button");
+    //     Generate a button that says "Complete" and append it to your `li`.
+    button.textContent = "Complete";
+    li.appendChild(button);
+    // Add an event listener so that when a user clicks the Complete button,
+    button.addEventListener("click", removeTodo);
+
+    //  Hint
+
+    // You can use `setAttribute` for `data-index` and `splice` to remove your todo from the list.
+    //     todoList.appendChild(li);
     todoList.appendChild(li);
   }
 }
