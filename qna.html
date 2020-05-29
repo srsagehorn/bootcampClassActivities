@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var score = 0;
+      var questions = [
+        { q: "Is water blue?", a: true },
+        { q: "Is the sky blue?", a: true },
+        { q: "Are giraffes tall?", a: true },
+        //   {"Is it hot outside?" : true}
+        //   {"Can I whistle?" : true}
+        //   {"Are you in Illinois?" : true}
+        //   {"Can you read?" : true}
+        //   {"Are you older than 1?" : true}
+        //   {"Do you like the Cubs??" : "False"}
+        //   {"Are you sitting down?" : true}
+      ];
+
+      for (i = 0; i < questions.length; i++) {
+        answer = confirm(questions[i].q);
+        if (answer != questions[i].a) {
+          alert("You're worng");
+          score++;
+        } else {
+          alert("Correct!");
+        }
+      }
+
+      alert(score);
+
+      // if answer == questions[i].
+    </script>
+  </body>
+</html>
