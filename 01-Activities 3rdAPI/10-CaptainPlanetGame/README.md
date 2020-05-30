@@ -13,3 +13,23 @@
   * Click to… Create fire or water (hint: images)!
 
 * Slack out a screenshot of the working example.
+
+
+<!--  -->
+click event listeners on all of the buttons
+animate all changes
+
+change sizes
+scale up (height and width bigger) and scale down (height and width smaller)
+sets it back to normal
+
+invisability
+change the opacity
+
+move controls
+change positions via x,y axis? or position (top, bottom, left, right)
+go planet button returns it to original position
+
+music
+play music
+pause music
