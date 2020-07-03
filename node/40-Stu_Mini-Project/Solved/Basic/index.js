@@ -9,33 +9,23 @@ function promptUser() {
     {
       type: "input",
       name: "name",
-      message: "What is your name?"
+      message: "What is your name?",
     },
     {
       type: "input",
       name: "location",
-      message: "Where are you from?"
-    },
-    {
-      type: "input",
-      name: "hobby",
-      message: "What is your favorite hobby?"
-    },
-    {
-      type: "input",
-      name: "food",
-      message: "What is your favorite food?"
+      message: "Where are you from?",
     },
     {
       type: "input",
       name: "github",
-      message: "Enter your GitHub Username"
+      message: "Enter your GitHub Username",
     },
     {
       type: "input",
       name: "linkedin",
-      message: "Enter your LinkedIn URL."
-    }
+      message: "Enter your LinkedIn URL.",
+    },
   ]);
 }
 
@@ -66,14 +56,14 @@ function generateHTML(answers) {
 }
 
 promptUser()
-  .then(function(answers) {
+  .then(function (answers) {
     const html = generateHTML(answers);
 
     return writeFileAsync("index.html", html);
   })
-  .then(function() {
+  .then(function () {
     console.log("Successfully wrote to index.html");
   })
-  .catch(function(err) {
+  .catch(function (err) {
     console.log(err);
   });
