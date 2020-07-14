@@ -4,7 +4,6 @@ describe("Arithmetic", () => {
   describe("Initialization", () => {
     it("should return an object containing a 'number' property when called with the 'new' keyword", () => {
       const obj = new Arithmetic();
-
       expect("number" in obj).toEqual(true);
     });
 
