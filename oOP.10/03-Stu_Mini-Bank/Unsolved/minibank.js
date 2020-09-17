@@ -1,12 +1,9 @@
 function MiniBank(balance) {
   this.balance = balance;
-  (this.getBalance = function () {
+  this.statement = [balance];
+  this.getBalance = function () {
     return this.balance;
-  }),
-    (this.printBalance = function () {
-      console.log(`Balance: ${this.getBalance()}`);
-    });
-  this.statement = [this.balance];
+  };
   this.setBalance = function (value) {
     this.balance = value;
   };
@@ -17,16 +14,31 @@ function MiniBank(balance) {
     return this.statement;
   };
   this.printStatement = function () {
-    for (var i = 0; i <= this.statement; i++) {
-      return this.statement[i];
-    }
+    this.statement.forEach((amount) => {
+      console.log(amount);
+    });
   };
   this.deposit = function (value) {
-    updateStatement(value);
-    setBalance(value);
+    this.setBalance(this.balance + value);
+    this.updateStatement(this.balance);
   };
-  this.withdraw = function (value) {
-    updateStatement(-Math.abs(value));
-    setBalance(value);
+  this.printBalance = function () {
+    console.log(`Balance: ${this.getBalance()}`);
   };
+  // this.withdraw = function (value) {
+  //   updateStatement(-Math.abs(value));
+  //   setBalance(value);
+  // };
 }
+
+var bank = new MiniBank(32);
+bank.printBalance;
+bank.deposit(100);
+bank.printBalance;
+// bank.withdraw(25);
+bank.printBalance;
+console.log(bank);
+
+const bank2 = new MiniBank(200);
+bank2.deposit(20);
+console.log(bank2);
