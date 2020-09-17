@@ -1,5 +1,5 @@
 // We're incorporating an npm package for doing weather searches.
-var weather = require("./WeatherAdmin.js");
+var weather = require("weather-js");
 
 // Creates a UserSearch Constructor
 var UserSearch = function (name, location) {
