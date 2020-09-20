@@ -6,7 +6,7 @@ function DayCare() {
   this.ageLimit = 6;
 }
 
-DayCare.prototype.addChild = function(child) {
+DayCare.prototype.addChild = function (child) {
   // If not passed a Child object, throw an error
   if (child instanceof Child === false) {
     throw new Error("Expected parameter 'child' to be an instance of Child");
@@ -26,7 +26,7 @@ DayCare.prototype.addChild = function(child) {
   this.children.push(child);
 };
 
-DayCare.prototype.pickupChild = function(name) {
+DayCare.prototype.pickupChild = function (name) {
   // Find the index of a child with the given name
   const index = this.children.findIndex((child) => {
     return child.name === name;
