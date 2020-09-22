@@ -1,0 +1,17 @@
+{
+  "name": "inquirer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "game.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^26.4.2"
+  }
+}
