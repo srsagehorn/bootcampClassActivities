@@ -1,12 +1,12 @@
 
--- 	USE animals_db;
---     
---     CREATE TABLE people; (
--- 		name VARCHAR(30) NOT NULL, 
--- 		has_pet BOOLEAN NOT NULL,
--- 		pet_name VARCHAR(30),
--- 		pet_age INTEGER(10)
---     );
+	USE animals_db;
+    
+    CREATE TABLE people; (
+		name VARCHAR(30) NOT NULL, 
+		has_pet BOOLEAN NOT NULL,
+		pet_name VARCHAR(30),
+		pet_age INTEGER(10)
+    );
     
 
 CREATE DATABASE favorite_db;
@@ -18,7 +18,7 @@ CREATE TABLE favorite_foods (
   -- Make a string column called "food" which cannot contain null --
   -- Make an numeric column called "score" --
 	food VARCHAR(50) NOT NULL,
-    score INTEGER(5) NOT NULL
+    score INTEGER(5)
 );
 
 USE favorite_db;
@@ -44,3 +44,5 @@ CREATE TABLE favorite_movies (
   -- Make an integer column called "score" --
   -- Set the primary key of the table to id --
 );
+
+INSERT INTO favorite_foods (food, score) VALUES ("apples", 9)
